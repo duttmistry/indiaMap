@@ -1,0 +1,17 @@
+.leaflet-tooltip {
+    background-color: transparent !important; /* Make the background transparent */
+    border: none !important;                 /* Remove border */
+    box-shadow: none !important;             /* Remove shadow */
+    color: black;                            /* Set text color for visibility */
+    font-size: 14px;                         /* Optional: Adjust font size */
+    font-weight: bold;                       /* Optional: Bold text */
+  }
+  
+  .custom-tooltip {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: #333; /* Customize text color */
+    font-size: 14px;
+    font-weight: bold;
+  }
