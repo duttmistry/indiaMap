@@ -1,0 +1,15 @@
+export const LocalStorage_key = {
+  token: "tn",
+  user_name: "un",
+  emp_code: "emp_code",
+  user_email: "em",
+  user_role: "ur",
+  standard_patch_data: "spd",
+  account: "at",
+  login_time: "lt",
+  is_super_admin: "sa",
+  is_read_only: "ro",
+  application: "ap",
+  emp_position_code: "epc",
+  auth_called: "ac",
+};

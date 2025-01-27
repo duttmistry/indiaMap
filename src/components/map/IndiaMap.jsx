@@ -84,7 +84,7 @@ const IndiaMap = ({ doctorsData, setDoctorsData }) => {
       ]} // Adjust bounds to Hyderabad area
       zoomControl={true}
     >
-      <div
+      {/* <div
         style={{
           marginBottom: "10px",
           marginTop: "10px",
@@ -131,7 +131,7 @@ const IndiaMap = ({ doctorsData, setDoctorsData }) => {
         >
           Dataset 3
         </button>
-      </div>
+      </div> */}
       <GeoJSON
         data={indian_States}
         onEachFeature={(feature, layer) => {
