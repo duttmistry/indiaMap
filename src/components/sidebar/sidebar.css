@@ -1,70 +1,68 @@
 .table-container {
-    /* max-width: 800px; */
-    width: 15%;
-    height: 95vh;
-    overflow: scroll;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
+  /* max-width: 800px; */
+  width: 15%;
+  height: 95vh;
+  overflow: auto;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.indian-states-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.indian-states-table th,
+.indian-states-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+.indian-states-table .main-header {
+  background-color: var(--background-color);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.indian-states-table thead tr:nth-child(2) {
+  background-color: var(--background-color);
+  color: white;
+}
+
+.indian-states-table .even-row {
+  background-color: #ffffff;
+}
+
+.indian-states-table .odd-row {
+  background-color: #f8f8f8;
+}
+
+.indian-states-table .info-cell {
+  text-align: right;
+  font-family: "Courier New", Courier, monospace;
+}
+
+@media (max-width: 600px) {
+  .table-container {
+    padding: 10px;
   }
-  
-  .indian-states-table {
-    width: 100%;
-    border-collapse: collapse;
-    border: 1px solid #ccc;
-    font-size: 14px;
-  }
-  
+
   .indian-states-table th,
   .indian-states-table td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ccc;
+    padding: 8px;
   }
-  
+
+  .indian-states-table {
+    font-size: 12px;
+  }
+
   .indian-states-table .main-header {
-    background-color: #0047ab;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: left;
+    font-size: 16px;
   }
-  
-  .indian-states-table thead tr:nth-child(2) {
-    background-color: #0047ab;
-    color: white;
-  }
-  
-  .indian-states-table .even-row {
-    background-color: #ffffff;
-  }
-  
-  .indian-states-table .odd-row {
-    background-color: #f8f8f8;
-  }
-  
-  .indian-states-table .info-cell {
-    text-align: right;
-    font-family: "Courier New", Courier, monospace;
-  }
-  
-  @media (max-width: 600px) {
-    .table-container {
-      padding: 10px;
-    }
-  
-    .indian-states-table th,
-    .indian-states-table td {
-      padding: 8px;
-    }
-  
-    .indian-states-table {
-      font-size: 12px;
-    }
-  
-    .indian-states-table .main-header {
-      font-size: 16px;
-    }
-  }
-  
-  
+}
