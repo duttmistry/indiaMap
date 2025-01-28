@@ -1,4 +1,3 @@
 export const endPoints = {
-  getDoctorsListBySearch: "/hcp/getDoctorsListBySearch",
-  getDoctorsList: "/hcp/getDoctorsList",
+  getPlannedAndVisitedData: "/api/poc/get-planned-and-visited-doctors",
 };

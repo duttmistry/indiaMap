@@ -6,6 +6,8 @@ import doctorData from "./doctor_pincode_mapping.json";
 import Legend from "./Legend";
 import "./map.css";
 import "leaflet/dist/leaflet.css";
+import { useDispatch, useSelector } from "react-redux";
+import { getPlannedAndVisitedData } from "../../redux/map/mapThunk";
 
 const pincodeList = hydrebad.features.map(
   (feature) => feature.properties.pin_code
@@ -14,6 +16,9 @@ const pincodeList = hydrebad.features.map(
 const IndiaMap = ({ doctorsData, setDoctorsData }) => {
   // const [doctorsData, setDoctorsData] = useState([]);
   const [maxVisit, setMexVisit] = useState(0);
+  const dispatch = useDispatch();
+  const { data, loading } = useSelector((state) => state.map);
+  console.log("data: ", data);
 
   // Function to style pin codes based on doctor count
   const stylePinCode = (feature) => {
@@ -41,6 +46,10 @@ const IndiaMap = ({ doctorsData, setDoctorsData }) => {
 
   useEffect(() => {
     const pripeidData = () => {
+      // Api Call
+      dispatch(getPlannedAndVisitedData()).unwrap();
+      //
+
       let groupedData = {};
       Array.from(
         new Map(doctorData.map((item) => [item.DOCTOR_OCE_ID, item])).values()
@@ -84,54 +93,11 @@ const IndiaMap = ({ doctorsData, setDoctorsData }) => {
       ]} // Adjust bounds to Hyderabad area
       zoomControl={true}
     >
-      {/* <div
-        style={{
-          marginBottom: "10px",
-          marginTop: "10px",
-          marginLeft: "50px",
-          position: "absolute",
-        }}
-      >
-        <button
-          style={{
-            padding: "10px 20px",
-            margin: "0 5px",
-            backgroundColor: "#ccc",
-            color: "white",
-            border: "none",
-            borderRadius: "5px",
-            cursor: "pointer",
-          }}
-        >
-          Dataset 1
-        </button>
-        <button
-          style={{
-            padding: "10px 20px",
-            margin: "0 5px",
-            backgroundColor: "#ccc",
-            color: "white",
-            border: "none",
-            borderRadius: "5px",
-            cursor: "pointer",
-          }}
-        >
-          Dataset 2
-        </button>
-        <button
-          style={{
-            padding: "10px 20px",
-            margin: "0 5px",
-            backgroundColor: "#ccc",
-            color: "white",
-            border: "none",
-            borderRadius: "5px",
-            cursor: "pointer",
-          }}
-        >
-          Dataset 3
-        </button>
-      </div> */}
+      <div className="container">
+        <button className={"button" + (true ? " active" : "")}>Planned</button>
+        <button className="button">Visited</button>
+        <button className="button">Both</button>
+      </div>
       <GeoJSON
         data={indian_States}
         onEachFeature={(feature, layer) => {

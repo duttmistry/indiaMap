@@ -1,9 +1,9 @@
 import axios from "axios";
-import { BASE_URL } from "../constants";
 import { LocalStorage_key } from "./localStorage";
+import { baseUrl } from "../constants";
 
 const Axios = axios.create({
-  baseURL: BASE_URL,
+  baseURL: baseUrl,
 });
 
 Axios.interceptors.request.use(
@@ -44,34 +44,5 @@ Axios.interceptors.response.use(
     return Promise.reject(error);
   }
 );
-
-// Axios.interceptors.response.use(
-//   (res) => {
-//     return res;
-//   },
-//   (err) => {
-//     if (err.response.status === 401) {
-//       showToastMassage();
-//       store.dispatch(logOutUser());
-//       return Promise.reject(err);
-//     }
-//     if (err.response.status === 404) {
-//       return Promise.reject(err);
-//     }
-//     if (err.response.status === 400) {
-//     //   if (
-//     //     err.response.data.message ===
-//     //     "User is not authorized for this operation"
-//     //   ) {
-//     //     toast.error(err.response.data.message);
-//     //   } else {
-//         showToastMassagePermition(err.response.data.message);
-//     //   }
-//       return Promise.reject(err);
-//     }
-//     // toast.error(err.response.data.message);
-//     return Promise.reject(err);
-//   }
-// );
 
 export { Axios };
