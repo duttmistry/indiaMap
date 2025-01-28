@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { MapContainer, GeoJSON } from "react-leaflet";
-import hydrebad from "./hydrebad.json"; // GeoJSON file for Hyderabad pin codes
+import hyderabad from "./hyderabad.json"; // GeoJSON file for Hyderabad pin codes
 import indian_States from "./in.json"; // GeoJSON file for Hyderabad pin codes
 import doctorData from "./doctor_pincode_mapping.json";
 import Legend from "./Legend";
@@ -9,7 +9,7 @@ import "leaflet/dist/leaflet.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getPlannedAndVisitedData } from "../../redux/map/mapThunk";
 
-const pincodeList = hydrebad.features.map(
+const pincodeList = hyderabad.features.map(
   (feature) => feature.properties.pin_code
 );
 
@@ -109,7 +109,7 @@ const IndiaMap = ({ doctorsData, setDoctorsData }) => {
       />
       <GeoJSON
         style={stylePinCode}
-        data={hydrebad}
+        data={hyderabad}
         onEachFeature={(feature, layer) => {
           const pinCode = feature.properties?.pin_code;
           let doctor = doctorsData.find((item) => item.pin_code === pinCode);
